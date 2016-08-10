@@ -1,4 +1,6 @@
-var lib = require('./libs/exceed.lib');
-window.EXcreateMessage = lib.EXcreateMessage;
-window.EXformat = lib.EXformat;
+window.React = require('react');
+window.Redux = require('redux');
+window.ReactRedux = require('react-redux');
+window.connect = ReactRedux.connect;
+window.ReactBootstrap = require('react-bootstrap');
 var Wrapper = require('./components/wrapper.jsx');
