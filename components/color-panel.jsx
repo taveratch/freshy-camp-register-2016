@@ -5,7 +5,7 @@ var Col = ReactBootstrap.Col;
   var Wrapper = React.createClass({
     getInitialState: function() {
       return {
-        colors: ['#EC644B', '#F5AB35', '#F89406', '#3FC380', '#59ABE3', '#A38F84']
+        colors: ['#EC644B', '#E67E22', '#FFEB3B', '#3FC380', '#59ABE3', '#795548']
       };
     },
     render: function() {

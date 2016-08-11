@@ -4,7 +4,8 @@
   var Actions = {
     checkUser: function(username) {
       return {
-        type: types.CHECK_USER
+        type: types.CHECK_USER,
+        data: username
       };
     },
     submit: function() {
@@ -15,6 +16,17 @@
     init: function() {
       return {
         type: types.INIT
+      };
+    },
+    random: function() {
+      return {
+        type: types.RANDOM
+      };
+    },
+    updateStudents: function(students) {
+      return {
+        type: types.UPDATE_STUDENTS,
+        data: students
       };
     }
   };
