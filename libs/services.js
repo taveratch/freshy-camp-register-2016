@@ -17,7 +17,7 @@
     submit: function(username, callback) {
       $.ajax({
         type: 'POST',
-        url: Constants.url + '/student/assign',
+        url: Constants.url + '/students/assign',
         data: {username: username}
       })
       .done(function(data) {

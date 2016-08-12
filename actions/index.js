@@ -1,14 +1,17 @@
 (function() {
   'use strict';
   var types = require('../constants');
+  var Services = require('../libs/services');
   var Actions = {
-    checkUser: function(username) {
+    checkUser: function(data) {
       return {
         type: types.CHECK_USER,
-        data: username
+        username: data.student ? data.student.std_id : null,
+        name: data.student ? data.student.name : null
       };
     },
-    submit: function() {
+    submit: function(username, callback) {
+      Services.submit(username, callback);
       return {
         type: types.SUBMIT
       };
@@ -18,15 +21,23 @@
         type: types.INIT
       };
     },
-    random: function() {
+    random: function(color, callback) {
       return {
-        type: types.RANDOM
+        type: types.RANDOM,
+        color: color,
+        callback: callback
       };
     },
     updateStudents: function(students) {
       return {
         type: types.UPDATE_STUDENTS,
         data: students
+      };
+    },
+    updateFeed: function(data) {
+      return {
+        type: types.UPDATE_FEED,
+        data: data
       };
     }
   };

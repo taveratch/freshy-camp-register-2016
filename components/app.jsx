@@ -3,7 +3,9 @@ var ContentPanel = require('./content-panel.jsx');
 var Services = require('../libs/services');
 var bindActionCreators = Redux.bindActionCreators;
 var Actions = require('../actions');
-var Input = require('./input.jsx');
+var InputWrapper = require('./input-wrapper.jsx');
+var FeedWrapper = require('./feed-wrapper.jsx');
+var ConfirmPanel = require('./confirm.jsx');
 (function() {
 	'use strict';
   var mapStateToProps = function(state) {
@@ -13,28 +15,34 @@ var Input = require('./input.jsx');
     return bindActionCreators(Actions, dispatch);
   };
 	var Wrapper = React.createClass({
-    checkUserCallback: function(data) {
-      if(data.available) {
-        this.props.checkUser(data.username);
-      }
-      console.log(data);
+    componentDidMount: function() {
+      var self = this;
+      var callback = function(data) {
+        self.props.updateStudents(data);
+      };
+      Services.getStudents(callback);
     },
-		handleKeyUp: function(event) {
-			if (event.keyCode === 13) {
-        Services.check(event.target.value, this.checkUserCallback);
-			}
-		},
+
 		render: function() {
+      var view;
+      if(this.props.reducer.username) {
+        view = <ConfirmPanel />;
+      }else {
+        view = <InputWrapper />;
+      }
 			return (
 				<div className="full-width full-height">
 					<div id="color-panel">
-						<ColorPanel/>
+						<ColorPanel />
 					</div>
 					<div id="content-panel">
+            <div id="feed-panel">
+              <FeedWrapper />
+            </div>
 						<div style={{
 							width: "60%"
 						}}>
-							<Input handleKeyUp={this.handleKeyUp}/>
+            { view }
 						</div>
 					</div>
 				</div>
