@@ -37,6 +37,10 @@ var ConfirmPanel = require('./confirm.jsx');
             <div id="color-panel">
               <ColorPanel />
             </div>
+            <div id="header-panel">
+              <span>CPSK Freshy Camp #12</span>
+              <div className="divider"></div>
+            </div>
             <div id="feed-panel" className="full-height">
               <FeedWrapper />
             </div>

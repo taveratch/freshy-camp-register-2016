@@ -33,7 +33,7 @@ var types = require('../constants');
         return;
        }
       changeColor(++count, round, color, callback);
-    },400);
+    },300);
   }
 
   function resetColor() {
@@ -51,7 +51,7 @@ var types = require('../constants');
         resetColor();
         return _.merge({},initialState, state, {name: null, color: null, username: null});
       case types.RANDOM:
-        changeColor(0,1,action.color, action.callback);
+        changeColor(0,3,action.color, action.callback);
         return state;
       case types.UPDATE_STUDENTS:
         newState.students = action.data;

@@ -9,7 +9,7 @@
         opacity: 0
       };
     },
-    componentDidMount: function() {
+    componentWillMount: function() {
       this._animate.cubicInOut('marginTop', 0, 1000);
       this._animate.cubicInOut('opacity', 1, 1000);
     },

@@ -230,3 +230,19 @@ input[type="text"] {
   position: absolute;
   bottom: 0;
 }
+
+#header-panel {
+  position: absolute;
+  top: 0;
+  color: white;
+  font-size: 40px;
+  margin-top: 100px;
+}
+
+.divider {
+  margin-top: 10px;
+  margin-left: 20%;
+  margin-right: 20%;
+  height: 1px;
+  background-color: white;
+}

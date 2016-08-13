@@ -9,7 +9,7 @@
   		received: function(data) {
         setTimeout(function() {
           store.dispatch(Action.updateFeed(data)); //update feed in real time
-        },2400);
+        },5400);
         var callback = function(data) {
           store.dispatch(Action.updateStudents(data));
         };
