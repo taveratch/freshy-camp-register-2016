@@ -32,15 +32,15 @@ var ConfirmPanel = require('./confirm.jsx');
       }
 			return (
 				<div className="full-width full-height">
-					<div id="color-panel">
+					{/* <div id="color-panel">
 						<ColorPanel />
-					</div>
+					</div> */}
 					<div id="content-panel">
-            <div id="feed-panel">
+            <div id="feed-panel" className="full-height">
               <FeedWrapper />
             </div>
 						<div style={{
-							width: "60%"
+							width: "50%"
 						}}>
             { view }
 						</div>

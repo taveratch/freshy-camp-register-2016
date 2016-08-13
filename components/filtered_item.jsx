@@ -24,7 +24,7 @@
 				<div onClick={this.onClick} className="filter-item-wrapper">
 					<div className="filter-item">
 						<span>{this.props.username}</span>
-						<span className="filter-item-name">{this.props.name}</span>
+						<span className="filter-item-name full-height flex-center-y">{this.props.name}</span>
 					</div>
 				</div>
 			);

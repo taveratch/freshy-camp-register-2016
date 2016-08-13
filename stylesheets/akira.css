@@ -19,6 +19,7 @@
 	border: none;
 	border-radius: 0;
   font-size: 1.5em;
+  border-radius: 6px;
 	background: #f0f0f0;
 	color: #7f8c8d;
 	font-weight: 400;
@@ -69,15 +70,21 @@
 
 /* Yoshiko */
 .input__field--yoshiko {
-	width: 100%;
-	background-color: #d0d1d0;
-	border: 2px solid transparent;
+	width: 50%;
+  color: white;
+  background-color: rgba(255,255,255,0.16);
+	border: 2px solid rgba(255,255,255,0.9);
 	-webkit-transition: background-color 0.25s, border-color 0.25s;
 	transition: background-color 0.25s, border-color 0.25s;
 }
 
+.input__field--yoshiko:focus {
+  width: 100%;
+}
+
 .input__label--yoshiko {
 	width: 100%;
+  left: 0;
 	text-align: left;
 	position: absolute;
 	bottom: 100%;
@@ -109,7 +116,7 @@
 	left: 0;
 	height: 100%;
 	width: 100%;
-	color: #a3d39c;
+	color: white;
 	padding: 2em 0;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -132,4 +139,20 @@
 .input--filled .input__field--yoshiko {
 	background-color: transparent;
 	border-color: #a3d39c;
+}
+
+*::-webkit-input-placeholder {
+    color: white;
+}
+*:-moz-placeholder {
+    /* FF 4-18 */
+    color: white;
+}
+*::-moz-placeholder {
+    /* FF 19+ */
+    color: white;
+}
+*:-ms-input-placeholder {
+    /* IE 10+ */
+    color: white;
 }

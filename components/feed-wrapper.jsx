@@ -9,11 +9,15 @@
       var index = this.props.reducer.feeds.length-5;
       if(index < 0) { index = 0; }
       return (
-        <div className="full-width">
+        <div className="full-width full-height">
           {
             this.props.reducer.feeds.map(function(item,i) {
               if(i<index) { return; }
-              return <Feed username={item.student.name} color={item.color}/>;
+              return (
+                <div className="feed-wrapper" style={{marginTop: 10}}>
+                  <Feed username={item.student.name} color={item.color}/>
+                </div>
+              );
             })
           }
         </div>

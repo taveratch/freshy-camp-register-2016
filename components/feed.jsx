@@ -5,18 +5,17 @@
     getInitialState: function() {
       this._animate = new ReactStateAnimation(this);
       return {
-        marginLeft: 190
+        marginTop: -150,
+        opacity: 0
       };
     },
     componentDidMount: function() {
-      this._animate.cubicInOut('marginLeft', 0, 300);
-    },
-    componentWillUnmount: function() {
-      this._animate.cubicInOut('marginLeft', 190, 300);
+      this._animate.cubicInOut('marginTop', 0, 1000);
+      this._animate.cubicInOut('opacity', 1, 1000);
     },
     render: function() {
       return (
-        <div style={{marginLeft: this.state.marginLeft}} className={"full-width feed-item " + this.props.color}>
+        <div style={{marginTop: this.state.marginTop + "%", opacity: this.state.opacity}} className={"full-width feed-item " + this.props.color + "-feed"}>
           <span>{this.props.username}</span>
         </div>
       );

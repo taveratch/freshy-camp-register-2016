@@ -48,9 +48,8 @@ var types = require('../constants');
         changeColor(0,3,action.color, action.callback);
         return state;
       case types.UPDATE_STUDENTS:
-        return _.merge(newState, {
-          students: action.data
-        });
+        newState.students = action.data;
+        return newState;
       case types.CHECK_USER:
         return _.merge(newState, {
           username: action.username,

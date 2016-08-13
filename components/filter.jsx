@@ -1,4 +1,5 @@
 var FilterItem = require('./filtered_item.jsx');
+var key = 1;
 (function() {
   'use strict';
   var mapStateToProps = function(state) {
@@ -15,7 +16,7 @@ var FilterItem = require('./filtered_item.jsx');
         <div id="filter">
           {
             filtered.map(function(item, i) {
-              return <FilterItem username={item.std_id} name={item.name}/>;
+              return <FilterItem key={key++} username={item.std_id} name={item.name}/>;
             })
           }
         </div>
