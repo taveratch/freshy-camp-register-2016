@@ -6,6 +6,7 @@ var Actions = require('../actions');
 var InputWrapper = require('./input-wrapper.jsx');
 var FeedWrapper = require('./feed-wrapper.jsx');
 var ConfirmPanel = require('./confirm.jsx');
+var Header = require('./header.jsx');
 (function() {
 	'use strict';
   var mapStateToProps = function(state) {
@@ -25,10 +26,13 @@ var ConfirmPanel = require('./confirm.jsx');
 
 		render: function() {
       var view;
+      var isShowHeader = false;
       if(this.props.reducer.username) {
         view = <ConfirmPanel />;
+        isShowHeader = false;
       }else {
         view = <InputWrapper />;
+        isShowHeader = true;
       }
 			return (
 				<div className="full-width full-height">
@@ -37,10 +41,7 @@ var ConfirmPanel = require('./confirm.jsx');
             <div id="color-panel">
               <ColorPanel />
             </div>
-            <div id="header-panel">
-              <span>CPSK Freshy Camp #12</span>
-              <div className="divider"></div>
-            </div>
+            <Header isShow={isShowHeader} />
             <div id="feed-panel" className="full-height">
               <FeedWrapper />
             </div>
