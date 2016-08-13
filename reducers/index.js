@@ -6,7 +6,13 @@ var types = require('../constants');
     name: null,
     color: null,
     students: [],
-    feeds: []
+    feeds: [],
+    red: {count: 0, name:''},
+    orange: {count: 0, name:''},
+    yellow: {count: 0, name:''},
+    green: {count: 0, name:''},
+    blue: {count: 0, name:''},
+    brown: {count: 0, name:''},
   };
   var className = ['red', 'orange', 'yellow', 'green', 'blue', 'brown'];
   function changeColor(count, round, color, callback) {
@@ -43,9 +49,9 @@ var types = require('../constants');
     switch(action.type) {
       case types.INIT:
         resetColor();
-        return _.merge({},initialState, {students: state.students, feeds: state.feeds});
+        return _.merge({},initialState, state, {name: null, color: null, username: null});
       case types.RANDOM:
-        changeColor(0,3,action.color, action.callback);
+        changeColor(0,1,action.color, action.callback);
         return state;
       case types.UPDATE_STUDENTS:
         newState.students = action.data;
@@ -57,6 +63,8 @@ var types = require('../constants');
         });
       case types.UPDATE_FEED:
         newState.feeds.push(action.data);
+        newState[action.data.color].count = newState[action.data.color].count+1;
+        newState[action.data.color].name = action.data.student.name;
         return newState;
       default:
         return state;

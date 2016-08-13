@@ -55,7 +55,7 @@
           <button id="reset-button" className="button" style={{display: 'none'}} onClick={this.reset} >Ok</button>
           <div id="confirm-button-wrapper">
             <button id="back-button" className="button" onClick={this.reset}>Back</button>
-            <span>&nbsp;&nbsp;</span>
+            <span style={{margin: "0px 10px"}}></span>
             <button id="random-button" className="button" onClick={this.onClick}>Go</button>
           </div>
         </div>

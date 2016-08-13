@@ -102,5 +102,8 @@
   font-weight: 900;
   font-style: italic; }
 /* END Black Italic */
-
+  @font-face {
+    font-family: Sukhumwit;
+    src: url("./fonts/sukhumwit.ttf") format("truetype");
+    font-style: normal; }
 /*# sourceMappingURL=roboto.css.map */

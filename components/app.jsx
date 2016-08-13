@@ -32,10 +32,11 @@ var ConfirmPanel = require('./confirm.jsx');
       }
 			return (
 				<div className="full-width full-height">
-					{/* <div id="color-panel">
-						<ColorPanel />
-					</div> */}
+
 					<div id="content-panel">
+            <div id="color-panel">
+              <ColorPanel />
+            </div>
             <div id="feed-panel" className="full-height">
               <FeedWrapper />
             </div>
